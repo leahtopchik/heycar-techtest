@@ -6,7 +6,11 @@ from .models import Image
 from .serializers import ImageSerializer
 
 
-class ImageViewSet(mixins.CreateModelMixin, GenericViewSet):
+class ImageViewSet(
+    mixins.CreateModelMixin, 
+    mixins.RetrieveModelMixin, 
+    GenericViewSet
+):
     """
     API endpoint that allows images to be uploaded.
     """

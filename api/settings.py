@@ -122,3 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'api/media')
+
+
+REST_FRAMEWORK = {
+    'UPLOADED_FILES_USE_URL': False
+}
