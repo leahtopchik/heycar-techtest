@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.contrib.auth.models import User, Group
+from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet
 
-# Create your views here.
+from .models import Image
+from .serializers import ImageSerializer
+
+
+class ImageViewSet(mixins.CreateModelMixin, GenericViewSet):
+    """
+    API endpoint that allows images to be uploaded.
+    """
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
